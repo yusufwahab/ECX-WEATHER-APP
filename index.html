@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="card">
+    <header class="heading">
+        <h1 class="heading-text">Weather App</h1>
+        <img src="./images/header-img.png" alt="weather image" class="weather-img">
+    </header>
+
+        <section class="form">
+            <input class="search-box" name="Location" id="location" placeholder="Enter location or Zip code" type="text">
+            <button class="submit-btn" type="submit">Get Weather</button>
+        </section>
+
+        <section class="error">
+            <h1 class="invalid">!!!The City you entered is Invalid!!!!</h1>
+        </section>
+
+        <main class="display">
+            <h1 class="display-h1">London</h1>
+            <p class="condition">condition</p>
+            <!-- <article class="temp-img"> -->
+                <img src="./images/clear.png" alt="clear" class="weather-icon">
+                <p class="temp">15<span class="degree">°C</span></p>
+
+            <section class="other-value">
+                <article class="humid-containaer">
+                <i class="fa fa-outdent" aria-hidden="true" id="humid-icon"></i>
+                <p class="humidity">39%</p>
+                <p class="span-other">Humidity</p>
+                </article>
+                <article class="wind-containaer">
+                <i class="fa fa-bar-chart" aria-hidden="true" id="wind-icon"></i>
+                <p class="wind-speed">20km/hr</p>
+                <p class="span-other">Wind Speed</p>
+                </article>
+            </section>
+                
+            <!-- </article> -->
+        </main>
+</div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
