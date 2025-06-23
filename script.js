@@ -12,6 +12,7 @@ const searchBtn = document.querySelector(".submit-btn")
 const span = document.querySelector(".span-other")
 const weatherIcon  = document.querySelector(".weather-icon");
 const errorMessage = document.querySelector(".error");
+const loading = document.querySelector(".loading");
 
 const weatherInfo = document.querySelector(".display");
 
@@ -19,13 +20,17 @@ async function checkWeather(location) {
     const response = await fetch(apiUrl + location + `&appid=${apiKey}`);
 
     if (response.status == 404) {
-        errorMessage.style.display = "block"
+        
+        setTimeout(()=> {
+            errorMessage.style.display = "block"
+        }, 2000)
         weatherInfo.style.display  = "none"
     } else {
         const data = await response.json();
     console.log(data)
 
-    city.innerHTML = data.name;
+    setTimeout(()=> {
+        city.innerHTML = data.name;
     temp.innerHTML = Math.round(data.main.temp) + "°C";
     humidity.innerHTML = data.main.humidity + "%"; 
     wind.innerHTML = data.wind.speed + "km/h";
@@ -46,16 +51,24 @@ async function checkWeather(location) {
     } else if (data.weather[0].main == "Humidity" ) {
         weatherIcon.src = "images/humidity.png"
     } 
-
     weatherInfo.style.display = "flex"
     errorMessage.style.display  = "none"
+    }, 1000)
+    
     }
     
 }
  searchBtn.addEventListener("click", () => {
         checkWeather(searchBox.value);
+        
+        
         if (location === "undefined") {
             `"Weather location unavailable"`
         }
+
+        loading.style.display = "block"
+        setTimeout(() => {
+            loading.style.display = "none";
+        }, 2000);
     })
 

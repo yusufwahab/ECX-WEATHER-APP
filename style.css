@@ -29,6 +29,8 @@ body {
     height: 70px;
     border-radius: 50px;
     box-shadow: rgba(0, 0, 0, 0);
+    /* border: 2px solid #000000; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
 }
 
 .heading {
@@ -61,6 +63,7 @@ button {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    font-size: 12px;
 }
 .display-h1 {
     font-size: 40px;
@@ -128,6 +131,11 @@ article {
     display: none;
 }
 
+.loading {
+    color: #008000;
+    display: none;
+}
+
 @media screen  and (max-width: 630px){
     .card {
     margin: 5rem;
@@ -181,6 +189,7 @@ button {
     color: #ffffff;
     border: none;
     cursor: pointer;
+    font-size: 9px;
 }
 .display-h1 {
     font-size: 25px;
